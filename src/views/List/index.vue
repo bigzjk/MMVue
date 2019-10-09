@@ -1,11 +1,13 @@
 <template>
   <div id="list">
-    <h1>list List</h1>
+    <h1>list {{msg}}</h1>
+    <input type="text" v-model="msg">
     <ul>
-        <li v-for="item in todos" v-bind:key="item" >
+        <li v-for="(item, i) in todos" :key="i" >
             {{ item.text }}
         </li>
     </ul>
+    <div v-on:click="handleClick" >click</div>
   </div>
 </template>
 
@@ -17,7 +19,13 @@
                     { text: '学习 JavaScript' },
                     { text: '学习 Vue' },
                     { text: '整个牛项目' }
-                ]
+                ],
+                msg: '帅气'
+            }
+        },
+        methods: {
+            handleClick () {
+                this.msg = this.msg + '10086'
             }
         }
     }
@@ -25,4 +33,4 @@
 
 <style>
 
-</style>script>
+</style>
