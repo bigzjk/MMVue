@@ -7,7 +7,7 @@
             {{ item.text }}
         </li>
     </ul>
-    <div v-on:click="handleClick" >click</div>
+    <div @click="handleClick" >click</div>
   </div>
 </template>
 
